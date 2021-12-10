@@ -34,7 +34,6 @@ public class WorkTaskServiceImpl implements WorkTaskService {
         WorkTask workTask = new WorkTask();
         workTask.setName(nameWorkTask);
         workTask.setEmployeeCreator(employeeCreator);
-        workTask.setInProgress(true);
         workTaskRepository.save(workTask);
     }
 
@@ -43,6 +42,7 @@ public class WorkTaskServiceImpl implements WorkTaskService {
     public void updateTask(Employee employeeExecutor, int idWorkTask) {
         WorkTask workTask = findById(idWorkTask);
         workTask.setEmployeeExecutor(employeeExecutor);
+        workTask.setInProgress(true);
         workTaskRepository.save(workTask);
     }
 
