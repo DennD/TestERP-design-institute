@@ -34,6 +34,7 @@ public class WorkTaskServiceImpl implements WorkTaskService {
         WorkTask workTask = new WorkTask();
         workTask.setName(nameWorkTask);
         workTask.setEmployeeCreator(employeeCreator);
+        workTask.setInProgress(true);
         workTaskRepository.save(workTask);
     }
 
